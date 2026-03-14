@@ -1,4 +1,4 @@
-package com.aulaback.aula;
+package com.aulaback.aula.Aula01;
 
 import org.springframework.web.bind.annotation.*;
 
