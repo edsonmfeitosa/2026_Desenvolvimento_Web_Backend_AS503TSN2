@@ -27,4 +27,12 @@ public class AlunoController {
     public Aluno alunoPorRa(@PathVariable String ra){
         return this.alunoService.porRA(ra);
     }
+    @PutMapping("{ra}")
+    public Aluno atualizaAluno(@PathVariable String ra, @RequestBody Aluno aluno){
+        return this.alunoService.atualizar(ra, aluno);
+    }
+    @DeleteMapping("{ra}")
+    public boolean excluirAluno(@PathVariable String ra){
+        return this.alunoService.excluir(ra);
+    }
 }

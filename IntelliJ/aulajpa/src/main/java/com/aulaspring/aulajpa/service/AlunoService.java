@@ -33,4 +33,18 @@ public class AlunoService {
     public Aluno porRA(String ra){
         return this.alunoRepository.findById(ra).orElse(null);
     }
-;;}
+    public Aluno atualizar(String ra, Aluno aluno){
+        Aluno alunoConsulta = this.alunoRepository.findById(ra).orElse(null);
+        if(alunoConsulta != null){
+            alunoConsulta.setNome(aluno.getNome());
+            alunoConsulta.setEndereco(aluno.getEndereco());
+            alunoConsulta.setEmail(aluno.getEmail());
+            return this.alunoRepository.save(alunoConsulta);
+        }
+        return null;
+    }
+    public boolean excluir(String ra){
+        this.alunoRepository.deleteById(ra);
+        return true;
+    }
+}
